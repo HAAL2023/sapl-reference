@@ -255,10 +255,9 @@ An expression step returns the value of an attribute with a key or an array item
 
 A wildcard step can be applied to an object or an array. When applied to an object, it returns an array containing all attribute values. As attributes of an object have no order, the sorting of the result is not defined. When applied to an array, the step just leaves the array untouched.
 
-::: info
-Applied to an object `{"key1":"value1", "key2":"value2"}`, the selection step `.*` or `[*]` returns the following array: `["value1", "value2"]` (possibly with a different sorting of the items). Applied to an array `[1, 2, 3]`, the selection step `.` **or** `[]` returns the original array `[1, 2, 3]`.
+{: .note }
+> Applied to an object `{"key1":"value1", "key2":"value2"}`, the selection step `.*` or `[*]` returns the following array: `["value1", "value2"]` (possibly with a different sorting of the items). Applied to an array `[1, 2, 3]`, the selection step `.` **or** `[]` returns the original array `[1, 2, 3]`.
 
-:::
 
 ###### Recursive Descent Step `..key`, `..["key"]`, `..[1]`, `..*` or `..[*]`
 
@@ -266,21 +265,20 @@ Looks for the specified key or array index in the current object or array and, r
 
 As attributes of an object are not sorted, the order of items in the result array may vary.
 
-::: info
-Applied to an `object`
+{: .note }
+> Applied to an `object`
+>
+> {
+> "key" : "value1",
+> "anotherkey" : {
+> "key" : "value2"
+> }
+> }
+> 
+> The selection step `object..key` returns the following array: `["value1", "value2"]` (any attribute value with key `key`, the items may be in a different order).
+> 
+> The wildcard selection step `object..` **or** `object..[]` returns `["value1", {"key":"value2"}, "value2"]` (recursively each attribute value and array item in the whole structure `object`, the sorting may be different).
 
-{
-"key" : "value1",
-"anotherkey" : {
-"key" : "value2"
-}
-}
-
-The selection step `object..key` returns the following array: `["value1", "value2"]` (any attribute value with key `key`, the items may be in a different order).
-
-The wildcard selection step `object..` **or** `object..[]` returns `["value1", {"key":"value2"}, "value2"]` (recursively each attribute value and array item in the whole structure `object`, the sorting may be different).
-
-:::
 
 ###### Condition `[?(Condition)]`
 
@@ -288,10 +286,9 @@ Condition steps return an array containing all attribute values or array items f
 
 As attributes have no order, the sorting of the result array of a condition step applied to an object is not specified.
 
-::: info
-Applied to the array `[1, 2, 3, 4, 5]`, the selection step `[?(@ > 2)]` returns the array `[3, 4, 5]` (containing all values that are greater than 2).
+{: .note }
+> Applied to the array `[1, 2, 3, 4, 5]`, the selection step `[?(@ > 2)]` returns the array `[3, 4, 5]` (containing all values that are greater than 2).
 
-:::
 
 ###### Array Slicing `[Start:Stop:Step]`
 
@@ -299,24 +296,21 @@ The slice contains the items with indices between `Start` and `Stop`, with `Star
 
 In case `Step` is positive, `Start` defaults to 0 and `Stop` defaults to the length of the array. If `Step` is negative, `Start` defaults to the length of the array minus 1 (i.e., the last element’s index) and `Stop` defaults to -1. A `Step` of 0 leads to an error.
 
-::: info
-Applied to the Array `[1, 2, 3, 4, 5]`, the selection step `[-2:]` returns the Array `[4, 5]` (the last two elements).
+{: .note }
+> Applied to the Array `[1, 2, 3, 4, 5]`, the selection step `[-2:]` returns the Array `[4, 5]` (the last two elements).
 
-:::
 
-::: info
-If Start and Stop are to be left empty, the two colons must be separated by a whitespace to avoid confusion with the sub-template operator. So write `[: :-2]` instead of `[::-2]`.
+{: .note }
+> If Start and Stop are to be left empty, the two colons must be separated by a whitespace to avoid confusion with the sub-template operator. So write `[: :-2]` instead of `[::-2]`.
 
-:::
 
 ###### Index Union `[index1, index2, …​]`
 
 By using the bracket notation, a set of multiple array indices (numbers) can be denoted separated by commas. This returns an array containing the items of the original array if the item’s index is contained in the specified indices. Since a **set** of indices is specified, the indices' order is ignored, and duplicate elements are removed. The result array contains the specified elements in their original order. Indices that do not exist in the original array are ignored.
 
-::: info
-Both `[3, 2, 2]` and `[2, 3]` return the same result.
+{: .note }
+> Both `[3, 2, 2]` and `[2, 3]` return the same result.
 
-:::
 
 ###### Attribute Union `["attribute1", "attribute2", …​]`
 
@@ -326,19 +320,18 @@ By using the bracket notation, a set of multiple attribute keys (strings) can be
 
 Although arrays do not have attributes (they have items), a key step can be applied to an array (e.g., `array.value`). This will loop through each item of the array and look for the specified attribute in this item. An array containing all values of the attributes found is returned. In other words, the selection step is not applied to the result of the previous step (the array) but to each item of the result, and the (sub-)results are concatenated. In case an array item is no object or does not contain the specified attribute, it is skipped.
 
-::: info
-Applied to an object
+{: .note }
+> Applied to an object
+>
+> {
+> "array":\[
+> {"key":"value1"},
+> {"key":"value2"}
+> \]
+> }
+>
+> `array.key` returns the following array: `["value1", "value2"]` (the value of the `key` attribute of each item of `array`).
 
-{
-"array":\[
-{"key":"value1"},
-{"key":"value2"}
-\]
-}
-
-`array.key` returns the following array: `["value1", "value2"]` (the value of the `key` attribute of each item of `array`).
-
-:::
 
 ###### Attribute Finder `.<finder.name>`
 
@@ -360,12 +353,11 @@ All attribute finders may be followed by arbitrary selection steps.
 
 In some scenarios, it may not be the right thing to subscribe to attributes, but to just retrieve the data once on subscription time. For this, SAPL offers the head operator for both standard and environment attributes. Prepending the pipe symbol `|` in front of an attribute finder step will only return the first value returned by the attribute finder. E.g.: `subject.id.|<geo.location>`. However, such an attribute may still return a stream if used with nested attributes which do not employ the head operator.
 
-::: info
-Assuming a doctor should only be allowed to access patient data from patients on her unit. The following expression retrieves the unit (attribute finder `pip.hospital_units.by_patientid`) by the requested patient id (`action.patientid`) and selects the id of the supervising doctor (`.doctorid`):
+{: .note }
+> Assuming a doctor should only be allowed to access patient data from patients on her unit. The following expression retrieves the unit (attribute finder `pip.hospital_units.by_patientid`) by the requested patient id (`action.patientid`) and selects the id of the supervising doctor (`.doctorid`):
+>
+> action.patientid.<pip.hospital_units.by_patientid>.doctorid
 
-action.patientid.<pip.hospital_units.by_patientid>.doctorid
-
-:::
 
 Attribute finders are described in greater detail [below](#attribute-finders).
 
@@ -391,15 +383,13 @@ filter.blacken(disclose\\\_left=0,disclose\\\_right=0,replacement="X")
 
 Replaces each char of an attribute or item (which must be a string) by `replacement`, leaving `show\_left` chars from the beginning and `show\_right` chars from the end unchanged. By default, no chars are visible, and each char is replaced by `X`.
 
-::: info
-`filter.blacken` could be used to reveal only the first digit of the credit card number and replace the other digits by `X`.
+{: .note }
+> `filter.blacken` could be used to reveal only the first digit of the credit card number and replace the other digits by `X`.
 
-:::
 
-::: info
-`filter.replace` and `filter.blacken` are part of the library `filter`. Importing this library through `import filter` makes the functions available under their simple names.
+{: .note }
+> `filter.replace` and `filter.blacken` are part of the library `filter`. Importing this library through `import filter` makes the functions available under their simple names.
 
-:::
 
 ```
 Example
@@ -493,10 +483,9 @@ each TargetRelativeExpression : Function
 
 The filter statements are applied successively from top to bottom.
 
-::: warn
-Some filter functions can be applied to both arrays and other types (e.g., `remove`). Yet, there are selection steps resulting in a "helper array" that cannot be modified. If, for instance, `.*` is applied to the object `{"key1" : "value1", "key2" : "value2"}`, the result would be `["value1", "value2"]`. It is not possible to apply a filter function directly to this array because changing the array itself would not have any effect. The array has been constructed merely to hold multiple values for further processing. In this case, the policy would **have to** use the keyword `each` and apply the function to each item. The attempt to alter a helper array will result in an error.
+{: .warning }
+> Some filter functions can be applied to both arrays and other types (e.g., `remove`). Yet, there are selection steps resulting in a "helper array" that cannot be modified. If, for instance, `.*` is applied to the object `{"key1" : "value1", "key2" : "value2"}`, the result would be `["value1", "value2"]`. It is not possible to apply a filter function directly to this array because changing the array itself would not have any effect. The array has been constructed merely to hold multiple values for further processing. In this case, the policy would **have to** use the keyword `each` and apply the function to each item. The attempt to alter a helper array will result in an error.
 
-:::
 
 ##### Custom Filter Functions
 
@@ -504,10 +493,9 @@ Any function available in SAPL can be used in a filter statement. Hence it is ea
 
 When used in a filter statement, the value to filter is passed to the function as its first argument. Consequently, the arguments specified in the function call are passed as second, third, etc., arguments.
 
-::: info
-Assuming a filter function `roundto` should round a value to the closest multiple of a given number, e.g., `207 |- roundto(100)` should return `200`. In its definition, the function needs two formal parameters. The first parameter is reserved for the original value and the second one for the number to round to.
+{: .note }
+> Assuming a filter function `roundto` should round a value to the closest multiple of a given number, e.g., `207 |- roundto(100)` should return `200`. In its definition, the function needs two formal parameters. The first parameter is reserved for the original value and the second one for the number to round to.
 
-:::
 
 #### Subtemplate
 
