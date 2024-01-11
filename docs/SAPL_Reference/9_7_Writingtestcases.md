@@ -17,7 +17,7 @@ The Step-Builder-Pattern is used for defining the concrete test case. It consist
 - Verify-Step: Verify the generated `AuthorizationDecision`
 <br><br>
 
-![StepBuilderPatternForSaplTest_English](images/StepBuilderPatternForSaplTest_English.svg)
+![StepBuilderPatternForSaplTest_English](/assets/sapl_reference_images/StepBuilderPatternForSaplTest_English.svg)
 
 <br><br>
 Starting with constructTestCaseWithMocks() or constructTestCase() called on the fixture, the test case definition process is started at the Given-Step or the When-Step.
@@ -83,7 +83,7 @@ Starting with constructTestCaseWithMocks() or constructTestCase() called on the 
     .givenAttribute("time.now", Duration.ofSeconds(10), timestamp0, timestamp1, timestamp2, timestamp3, timestamp4, timestamp5)
     ```
 
-> [!WARNING]
+{: .warning }
 > The virtual time feature can be used with real time-based PIPs registered the fixture level. Virtual time is "no silver bullet" to cite the [Project Reactor Reference Guide](https://projectreactor.io/docs/core/release/reference/#_manipulating_time). It says further that "\[v\]irtual time also gets very limited with infinite sequences, which might hog the thread on which both the sequence and its verification run."
 
 
