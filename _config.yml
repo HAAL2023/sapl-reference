@@ -28,8 +28,6 @@ permalink: pretty
 content:
   redirectBackToLink: https://haal2023.github.io/mySaplReference/
 
-port: 4004
-
 exclude:
  # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
    - .sass-cache/
