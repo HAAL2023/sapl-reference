@@ -21,7 +21,7 @@ The keyword `policy` is followed by the policy name. The name is a string *ident
 
 SAPL expects an entitlement specification. This can either be `permit` or `deny`. The entitlement is the value to which the policy evaluates if the policy is applicable to the authorization subscription, i.e., if both the conditions in the policy’s target expression and in the policy’s body are satisfied.
 
-> [!NOTE]
+{: .note }
 > Since multiple policies can be applicable and the combining algorithm can be chosen, it might make a difference whether there is an explicit `deny`\-policy or whether there is just no permitting policy for a certain situation.
 
 #### Target Expression
