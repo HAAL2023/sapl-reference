@@ -26,7 +26,7 @@ repository: heutelbeck/sapl-policy-engine # for github-metadata
 permalink: pretty
 
 content:
-  redirectBackToLink: http://127.0.0.1:4000
+  redirectBackToLink: https://haal2023.github.io/mySaplReference/
 
 port: 4004
 
