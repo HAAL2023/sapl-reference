@@ -247,7 +247,7 @@ SAPL supports querying for specific parts of a JSON structure. Except for an **e
 
 An expression step returns the value of an attribute with a key or an array item with an index specified by an expression. `Expression` must evaluate to a string or a number. If `Expression` evaluates to a string, the selection can only be applied to an object. If `Expression` evaluates to a number, the selection can only be applied to an array.
 
-> [!NOTE]
+{: .note }
 > The expression step can be used to refer to custom variables (`object.array[(anIndex+2)]`) or apply custom functions (`object.array[(max_value(object.array))]`.
 
 
