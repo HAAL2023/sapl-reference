@@ -13,7 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: SAPL.io
+title: SAPL
+returnTitle: return to SAPL.io
 email: dominic_at_heutelbeck.com
 description: >- # this means to ignore newlines until "baseurl:"
   SAPL is a powerful policy language and engine to implement Attribute-based access control (ABAC).
