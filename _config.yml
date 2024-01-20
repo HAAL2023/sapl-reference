@@ -14,7 +14,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SAPL
-returnTitle: return to SAPL.io
 email: dominic_at_heutelbeck.com
 description: >- # this means to ignore newlines until "baseurl:"
   SAPL is a powerful policy language and engine to implement Attribute-based access control (ABAC).
@@ -28,8 +27,10 @@ repository: heutelbeck/sapl-policy-engine # for github-metadata
 
 permalink: pretty
 
+# Custom parameter
+returnTitle: return to SAPL.io # Linktext in Nav-Bar to return back to sapl.io main-page
 content:
-  redirectBackToLink: https://haal2023.github.io/mySaplReference/
+  redirectBackToLink: https://haal2023.github.io/mySaplReference/ #Return-URL to sapl.io main-page
 
 exclude:
  # from https://github.com/jekyll/jekyll/blob/master/lib/site_template/_config.yml:
