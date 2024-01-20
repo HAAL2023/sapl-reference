@@ -8,9 +8,9 @@ permalink: /
 ---
 
 # SAPL Reference
-
+<!--
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
-
+-->
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 
