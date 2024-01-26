@@ -2,7 +2,7 @@
 layout: default
 title: Writing test cases
 permalink: /reference/Writing-test-cases/
-parent: Testing
+parent: Testing SAPL policies
 grand_parent: SAPL Reference
 nav_order: 7
 ---

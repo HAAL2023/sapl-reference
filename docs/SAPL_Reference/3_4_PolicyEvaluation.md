@@ -2,7 +2,7 @@
 layout: default
 title: Policy Evaluation
 permalink: /reference/Policy-Evaluation/
-parent: Publish/Subscribe
+parent: Publish/Subscribe Protocol
 grand_parent: SAPL Reference
 nav_order: 4
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Custom Attribute Finders
 permalink: /reference/Custom-Attribute-Finders/
-parent: Finders
+parent: Attribute Finders
 grand_parent: SAPL Reference
 nav_order: 2
 ---

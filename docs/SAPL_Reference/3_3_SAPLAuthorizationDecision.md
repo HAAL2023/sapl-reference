@@ -2,7 +2,7 @@
 layout: default
 title: SAPL Authorization Decision
 permalink: /reference/SAPL-Authorization-Decision/
-parent: Publish/Subscribe
+parent: Publish/Subscribe Protocol
 grand_parent: SAPL Reference
 nav_order: 3
 ---

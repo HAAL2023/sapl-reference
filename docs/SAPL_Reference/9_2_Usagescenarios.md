@@ -2,7 +2,7 @@
 layout: default
 title: Usage scenarios
 permalink: /reference/Usage-scenarios/
-parent: Testing
+parent: Testing SAPL policies
 grand_parent: SAPL Reference
 nav_order: 2
 ---

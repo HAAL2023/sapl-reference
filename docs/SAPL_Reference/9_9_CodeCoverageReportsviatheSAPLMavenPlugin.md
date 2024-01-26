@@ -2,7 +2,7 @@
 layout: default
 title: Code Coverage Reports via the SAPL Maven Plugin
 permalink: /reference/Code-Coverage-Reports-via-the-SAPL-Maven-Plugin/
-parent: Testing
+parent: Testing SAPL policies
 grand_parent: SAPL Reference
 nav_order: 9
 ---

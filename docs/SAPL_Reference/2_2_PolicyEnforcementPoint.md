@@ -2,7 +2,7 @@
 layout: default
 title: PEP
 permalink: /reference/pep/
-parent: Architecture
+parent: Reference Architecture
 grand_parent: SAPL Reference
 nav_order: 2
 ---

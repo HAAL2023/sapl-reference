@@ -2,7 +2,7 @@
 layout: default
 title: Embedded PDP
 permalink: /reference/Embedded-PDP/
-parent: Testing
+parent: Testing SAPL policies
 grand_parent: SAPL Reference
 nav_order: 3
 ---

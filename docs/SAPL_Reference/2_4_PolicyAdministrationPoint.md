@@ -2,7 +2,7 @@
 layout: default
 title: PAP
 permalink: /reference/pap/
-parent: Architecture
+parent: Reference Architecture
 grand_parent: SAPL Reference
 nav_order: 4
 ---
