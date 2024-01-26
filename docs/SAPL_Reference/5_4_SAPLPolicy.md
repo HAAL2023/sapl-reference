@@ -4,7 +4,7 @@ title: SAPL Policy
 permalink: /reference/SAPL-Policy/
 parent: The SAPL Policy Language
 grand_parent: SAPL Reference
-nav_order: 4
+nav_order: 5
 ---
 
 ### SAPL Policy
