@@ -1,10 +1,10 @@
 ---
 layout: default
 title: Testing SAPL policies
-permalink: /reference/Testing-SAPL-policies/
-parent: Testing
-grand_parent: SAPL Reference
-nav_order: 1
+#permalink: /reference/Testing-SAPL-policies/
+has_children: true
+parent: SAPL Reference
+nav_order: 9
 ---
 
 ## Testing SAPL policies

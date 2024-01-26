@@ -1,10 +1,10 @@
 ---
 layout: default
-title: AuthorizationSubscriptionEvaluation
-permalink: /reference/Authorization-Subscription-Evaluation/
-parent: Authorization Subscription Evaluation
-grand_parent: SAPL Reference
-nav_order: 1
+title: Authorization Subscription Evaluation
+#permalink: /reference/Authorization-Subscription-Evaluation/
+has_children: true
+parent: SAPL Reference
+nav_order: 6
 ---
 
 ## Authorization Subscription Evaluation

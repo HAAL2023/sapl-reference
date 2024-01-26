@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Reference Architecture
-permalink: /reference/reference-architecture/
-parent: Architecture
-grand_parent: SAPL Reference
-nav_order: 1
+has_children: true
+parent: SAPL Reference
+nav_order: 2
 ---
 
 ## Reference Architecture

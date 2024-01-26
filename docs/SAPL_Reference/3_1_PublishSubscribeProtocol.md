@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Protocol
-permalink: /reference/publish-subscribe-protocol/
-parent: Publish/Subscribe
-grand_parent: SAPL Reference
-nav_order: 1
+title: Publish/Subscribe Protocol
+#permalink: /reference/publish-subscribe-protocol/
+has_children: true
+parent: SAPL Reference
+nav_order: 3
 ---
 
 ## Publish / Subscribe Protocol

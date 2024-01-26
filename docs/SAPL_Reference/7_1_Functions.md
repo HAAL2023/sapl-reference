@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Functions definition
-permalink: /reference/Functions/
-parent: Functions
-grand_parent: SAPL Reference
-nav_order: 1
+title: Functions
+#permalink: /reference/Functions/
+has_children: true
+parent: SAPL Reference
+nav_order: 7
 ---
 
 ## Functions
