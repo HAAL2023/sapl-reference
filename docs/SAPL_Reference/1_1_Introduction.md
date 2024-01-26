@@ -1,10 +1,11 @@
 ---
 layout: default
-title: SAPL
-permalink: /reference/SAPL/
-parent: Introduction
-grand_parent: SAPL Reference
+title: Introduction
+has_children: true
+parent: SAPL Reference
 nav_order: 1
+#grand_parent: UI Components
+#permalink: /reference/Introduction/
 ---
 
 # SAPL - Streaming Attribute Policy Language
