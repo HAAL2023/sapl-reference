@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Imports
+title: Schemas
 permalink: /reference/Schemas/
 parent: The SAPL Policy Language
 grand_parent: SAPL Reference
