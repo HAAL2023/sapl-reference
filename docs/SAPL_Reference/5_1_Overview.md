@@ -24,17 +24,17 @@ subject schema aSubjectSchema (2)
 
 policy "test_policy" (3)
 permit <4>
-	subject.id == "anId" | action == "anAction" (5)
+    subject.id == "anId" | action == "anAction" (5)
 where 
-	var variable = "anAttribute";
-	subject.attribute == variable; (6)
+    var variable = "anAttribute";
+    subject.attribute == variable; (6)
     var foo = true schema {"type": "boolean"} (7)
 obligation
-	"logging:log_access" (8)
+    "logging:log_access" (8)
 advice
-	"logging:inform_admin" (9)
+    "logging:inform_admin" (9)
 transform
-	resource.content |- filter.blacken (10)
+    resource.content |- filter.blacken (10)
 ```
 
 **1.** Imports (optional)
