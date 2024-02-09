@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### Custom Function Libraries
+## Custom Function Libraries
 
 For a more in-depth look at the process of creating a custom function library, please refer to the demo project. It provides a walkthrough of the entire process and contains extensive examples: <https://github.com/heutelbeck/sapl-demos/tree/master/sapl-demo-extension> .
 

@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### Overview
+## Overview
 
 SAPL knows two types of documents: Policy sets and policies. The decisions of the PDP are based on all documents published in the policy store of the PDP. A policy set contains an ordered set of connected policies.
 

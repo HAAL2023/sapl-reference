@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### HTTP Server-Sent Events API
+## HTTP Server-Sent Events API
 
 A PDP to be used as a network service must implement some HTTP endpoints. All of them accept `POST` requests and `application/json`. They produce `application/x-ndjson` as [Server-Sent Events (SSE)](https://www.w3.org/TR/eventsource/). A PDP server must be accessed over encrypted TLS connections. All connections should be authenticated. The means of authentications are left open for the organization deploying the PDP to decide or to be defined by a specific server implementation. All endpoints should be located under a shared base URL, e.g., `[https://pdp.sapl.io/api/pdp/](https://pdp.sapl.io/api/pdp/)`.
 
@@ -17,28 +17,28 @@ A PEP must determine if it can enforce obligations before granting access. It mu
 
 Upon subscription, the PDP server will respond with an unbound stream of decisions. The client must close the connection to stop receiving decision events. A connection termination by the server is an error state and must be handled as discussed.
 
-#### Decide
+### Decide
 
 - URL: `{baseURL}/decide`
 - Method: `POST`
 - Body: A valid JSON authorization subscription
 - Produces: A SSE stream of authorization decisions
 
-#### Multi Decide
+### Multi Decide
 
 - URL: `{baseURL}/multi-decide`
 - Method: `POST`
 - Body: A valid JSON multi subscription
 - Produces: A SSE stream of Single Authorization Decisions with Associated Subscription ID JSON Objects
 
-#### Multi Decide All
+### Multi Decide All
 
 - URL: `{baseURL}/multi-decide-all`
 - Method: `POST`
 - Body: A valid JSON multi subscription
 - Produces: A SSE stream of Multi Decision JSON Objects
 
-#### Implementations
+### Implementations
 
 The SAPL Policy engine comes with two implementations ready for deployment in an organization:
 

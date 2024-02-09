@@ -7,11 +7,11 @@ grand_parent: SAPL Reference
 nav_order: 7
 ---
 
-### Language Elements
+## Language Elements
 
 The descriptions of the policy and policy set structure sometimes refer to language elements like identifiers and strings. These elements are explained in this section.
 
-#### Identifiers
+### Identifiers
 
 Multiple elements in policies or policy sets require identifiers. E.g., a variable assignment expects an identifier after the keyword `var` - the name under which the assigned value will be available.
 
@@ -36,11 +36,11 @@ a#name
 
 A caret `^` before the identifier may be used to avoid a conflict with SAPL keywords.
 
-#### Strings
+### Strings
 
 Whenever strings are expected, the SAPL document must contain any sequence of characters enclosed by single quotes `'` or double quotes `"`. Any enclosing quote character occurring in the string must be escaped by a preceding `\`, e.g., `"the name is \"John Doe\""`.
 
-#### Comments
+### Comments
 
 Comments are used to store information in a SAPL document which is only intended for human readers and has no meaning for the PDP. Comments are simply ignored when the PDP evaluates a document.
 

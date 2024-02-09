@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 4
 ---
 
-### Authorization Subscription
+## Authorization Subscription
 
 The value, which is assigned to the authorization subscription, i.e., the final authorization decision to be returned by the PDP, is the result of applying a combining algorithm to the values assigned to all top-level SAPL documents.
 

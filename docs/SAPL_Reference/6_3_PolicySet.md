@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 3
 ---
 
-### Policy Set
+## Policy Set
 
 A decision value (`NOT_APPLICABLE`, `INDETERMINATE`, `PERMIT` or `DENY`) can also be assigned to a policy set. This value depends on the result of evaluating the policy set’s target expression and the policies contained in the policy set:
 

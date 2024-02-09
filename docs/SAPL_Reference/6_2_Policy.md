@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### Policy
+## Policy
 
 Evaluating a policy against an authorization subscription means assigning a value of `NOT_APPLICABLE`, `INDETERMINATE`, `PERMIT`, or `DENY` to it. The assigned value depends on the result of evaluating the policy’s target and condition (which are conditions that can either be `true` or `false`):
 

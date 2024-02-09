@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 8
 ---
 
-### Examples
+## Examples
 
 The following example constitutes a full minimal SAPL unit test:
 

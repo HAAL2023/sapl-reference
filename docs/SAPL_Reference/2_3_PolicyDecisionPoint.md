@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 3
 ---
 
-### Policy Decision Point (PDP)
+## Policy Decision Point (PDP)
 
 The PDP must make an authorization decision based on an authorization subscription object and the access policies it receives from a **Policy Retrieval Point (PRP)** connected to a policy store. Beginning with the authorization subscription object, the PDP fetches policy sets and policies matching the authorization subscription, evaluates them, and combines the results to create and return an authorization decision object. There may be multiple matching policies that might evaluate to different results. To resolve these conflicts, the administrator or developer using a PDP must select a **combining algorithm** (e.g., `permit-overrides` stating that the decision will be `permit` if any applicable policy evaluates to `permit`).
 

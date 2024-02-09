@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 7
 ---
 
-### Obligation / Advice
+## Obligation / Advice
 
 Finally, obligation and advice might be added to the authorization decision. Both can be defined for each policy individually. If a final decision is `PERMIT`, there can be multiple policies and policy sets evaluating to `PERMIT`, each of them containing an obligation and/or advice statement - same goes for `DENY`. The final authorization decision with a certain decision must contain all obligations and advice of policy documents evaluating to this decision, but not the obligation and advice of those policy documents evaluating to a different decision.
 

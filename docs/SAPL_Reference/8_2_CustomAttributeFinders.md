@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### Custom Attribute Finders
+## Custom Attribute Finders
 
 For a more in-depth look at the process of creating a custom PIP, please refer to the demo project. It provides a walkthrough of the entire process and contains extensive examples: <https://github.com/heutelbeck/sapl-demos/tree/master/sapl-demo-extension> .
 

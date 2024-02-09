@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 3
 ---
 
-### Java API
+## Java API
 
 The Java API is based on the reactive libraries of Project Reactor (<https://projectreactor.io/>). The API is defined in the `sapl-pdp-api` module:
 
@@ -77,7 +77,7 @@ public interface PolicyDecisionPoint {
 }
 ```
 
-#### Embedded PDP
+### Embedded PDP
 
 To use a PDP two implementations of the API are supplied. First, a completely embedded PDP can be used to be deployed with an application. (See: <https://github.com/heutelbeck/sapl-policy-engine/tree/master/sapl-pdp-embedded>)
 
@@ -99,7 +99,7 @@ The library with Spring auto configuration support:
    </dependency>
 ```
 
-#### Remote PDP
+### Remote PDP
 
 Alternatively, a remote PDP server can be used via the same interface by using the client implementation. (See: <https://github.com/heutelbeck/sapl-policy-engine/tree/master/sapl-pdp-remote>)
 
@@ -121,7 +121,7 @@ The library with Spring auto configuration support:
    </dependency>
 ```
 
-#### Spring Security Integration and PEP Implementation
+### Spring Security Integration and PEP Implementation
 
 For Spring Security (<https://spring.io/projects/spring-security>), a full PEP implementation is available. A matching Spring PDP implementation also must be declared to use the integration (see above).
 

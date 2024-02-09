@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 7
 ---
 
-### Writing test cases
+## Writing test cases
 
 The Step-Builder-Pattern is used for defining the concrete test case. It consists of the following four steps:
 
@@ -22,7 +22,7 @@ The Step-Builder-Pattern is used for defining the concrete test case. It consist
 <br><br>
 Starting with constructTestCaseWithMocks() or constructTestCase() called on the fixture, the test case definition process is started at the Given-Step or the When-Step.
 
-#### Given-Step
+### Given-Step
 
 **Mocking of functions**:
 
@@ -112,7 +112,7 @@ Starting with constructTestCaseWithMocks() or constructTestCase() called on the 
 
 Further mock types or overloaded methods are available [here](https://github.com/heutelbeck/sapl-policy-engine/blob/master/sapl-test/src/main/java/io/sapl/test/steps/GivenStep.java).
 
-#### When-Step
+### When-Step
 
 The next defines the `AuthorizationSubscription` for the policy evaluation.
 
@@ -138,7 +138,7 @@ The next defines the `AuthorizationSubscription` for the policy evaluation.
       .when(authzSub)
   ```
 
-#### Expect-Step
+### Expect-Step
 
 This step defines the expected `AuthorizationDecision`.
 
@@ -199,6 +199,6 @@ These methods come with additional methods (e.g., `expectNextPermit`) to define 
 
 More available methods are documented [here](https://github.com/heutelbeck/sapl-policy-engine/blob/master/sapl-test/src/main/java/io/sapl/test/steps/ExpectStep.jav).
 
-#### Verify-Step
+### Verify-Step
 
 The `verify()` method completes the test definition, and triggers the evaluation of the policy/policies and verifies the expectations.

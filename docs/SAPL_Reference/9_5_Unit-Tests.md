@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 5
 ---
 
-### Unit-Tests
+## Unit-Tests
 
 SAPL tests use JUnit for executing SAPL unit test cases. Each test is prepared by creating `SaplUnitTestFixture`. This can be done in the `@BeforeEachStep` of a JUnit test case.
 

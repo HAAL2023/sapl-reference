@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 6
 ---
 
-### SAPL Policy Set
+## SAPL Policy Set
 
 While a policy can either be a top-level SAPL document or be contained in a policy set, policy sets are always top-level documents. I.e., for evaluating an authorization subscription, the PDP evaluates an existing policy set. Policy sets are evaluated against an authorization subscription by checking their target expression, if applicable evaluating their policies, and, if necessary, combining multiple decisions according to a combining algorithm specified in the policy set. Finally, similarly to policies, policy sets evaluate to either `PERMIT`, `DENY`, `NOT_APPLICABLE` or `INDETERMINATE`.
 
@@ -15,7 +15,7 @@ Policy sets are used to structure multiple policies and provide an order for the
 
 A policy set definition starts with the keyword `set`.
 
-#### Name
+### Name
 
 The keyword `set` is followed by the policy set name. The name is a string *identifying* the policy set. It must be unique within all policy sets and policies.
 
@@ -34,13 +34,13 @@ Possible values are:
 
 The combining algorithms are described in more detail [later](#combining-algorithms).
 
-#### Target Expression
+### Target Expression
 
 After the combining algorithm, an **optional** target expression can be specified. The target expression is a condition for applying the policy set. It starts with the keyword `for` followed by an expression that must evaluate to either `true` or `false`. If the condition evaluates to `true` for a certain authorization subscription, the policy set *matches* this subscription. In case the target expression is missing, the policy set matches any authorization subscription.
 
 The policy sets' target expression is used to select matching policy sets from a large collection of policy documents before evaluating them. As this needs to be done efficiently, there are no [attribute finder steps](#attribute-finders) allowed at this place.
 
-#### Variable Assignments
+### Variable Assignments
 
 The target expression can be followed by any number of variable assignments. Variable assignments are used to make a value available in all subsequent policies under a certain name. An assignment starts with the keyword `var`, followed by an identifier under which the assigned value should be available, followed by `=` and an expression (see [above](#value-assignment)).
 
@@ -48,7 +48,7 @@ Since variable assignments are only evaluated if the policy set’s target match
 
 In case a policy within the policy set assigns a variable already assigned in the policy set, the assignment in the policy overwrites the old. The overwritten value only exists within the particular policy. In other policies, the variable has the value defined in the policy set.
 
-#### Policies
+### Policies
 
 Each policy set must contain one or more policies. [See above](#policy) how to describe a SAPL policy. If the combining algorithm `first-applicable` is used, the policies are evaluated in the order in which they appear in the policy set.
 

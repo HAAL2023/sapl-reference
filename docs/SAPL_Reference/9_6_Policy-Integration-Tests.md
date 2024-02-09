@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 6
 ---
 
-### Policy-Integration-Tests
+## Policy-Integration-Tests
 
 Instead of testing a single SAPL document, all policies can be tested together using the PDP interface, just like when an application uses an embedded PDP or a SAPL server.
 

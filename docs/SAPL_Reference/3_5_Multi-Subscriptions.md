@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 5
 ---
 
-### Multi-Subscriptions
+## Multi-Subscriptions
 
 SAPL allows for bundling multiple authorization subscriptions into one multi-subscription. A multi-subscription is a JSON object with the following structure:
 

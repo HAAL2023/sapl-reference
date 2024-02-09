@@ -7,24 +7,24 @@ grand_parent: SAPL Reference
 nav_order: 5
 ---
 
-### SAPL Policy
+## SAPL Policy
 
 This section describes the elements of a SAPL policy in more detail. A policy contains an entitlement (`permit` or `deny`) and can be evaluated against an authorization subscription. If the conditions in the target expression and in the body are fulfilled, the policy evaluates to its entitlement. Otherwise, it evaluates to `NOT_APPLICABLE` (if one of the conditions is not satisfied) or `INDETERMINATE` (if an error occurred).
 
 A SAPL policy starts with the keyword `policy`.
 
-#### Name
+### Name
 
 The keyword `policy` is followed by the policy name. The name is a string *identifying* the policy. Therefore, it must be unique. Accordingly, in systems with many policy sets and policies, it is recommended to use a schema to create names (e.g., `"policy:patientdata:permit-doctors-read"`).
 
-#### Entitlement
+### Entitlement
 
 SAPL expects an entitlement specification. This can either be `permit` or `deny`. The entitlement is the value to which the policy evaluates if the policy is applicable to the authorization subscription, i.e., if both the conditions in the policy’s target expression and in the policy’s body are satisfied.
 
 {: .note }
 > Since multiple policies can be applicable and the combining algorithm can be chosen, it might make a difference whether there is an explicit `deny`\-policy or whether there is just no permitting policy for a certain situation.
 
-#### Target Expression
+### Target Expression
 
 After the entitlement, an **optional** target expression can be specified. This is a condition for applying the policy, hence an expression that must evaluate to either `true` or `false`. Which elements are allowed in SAPL expressions is described [below](#expressions).
 
@@ -37,7 +37,7 @@ Accordingly, there are two limitations regarding the elements allowed in the tar
 - As lazy evaluation deviates from Boolean logic and prevents effective indexing, the logical operators `&&` and `||` may not be used. Instead, the target needs to use the operators `&` and `|`, for which eager evaluation is applied.
 - [Attribute finder steps](#attribute-finders) that have access to environment variables and may contact external PIPs are not allowed in the target. Functions may be used because their output only depends on the arguments passed.
 
-#### Body
+### Body
 
 The policy body is **optional** and starts with the keyword `where`. It contains one or more statements, each of which must evaluate to `true` for the policy to apply to a certain authorization subscription. Accordingly, the body extends the condition in the target expression and further limits the policy’s applicability.
 
@@ -63,7 +63,7 @@ There are no restrictions on the syntax elements allowed in the policy body. Laz
 
 If the body is missing (or does not contain any condition statement), the policy is applicable to any authorization subscription which the policy matches (i.e., for which the target expression evaluates to `true`).
 
-##### Variable Assignment
+#### Variable Assignment
 
 A variable assignment starts with the keyword `var`, followed by an identifier under which the assigned value should be available, followed by `=` and an expression. The assignment can be followed by the optional keyword `schema` and one or more schema expressions separated by `,`. The schema expression(s) must evaluate to a valid JSON schema.
 
@@ -73,13 +73,13 @@ The expression can use any element of the SAPL expression language, especially o
 
 The value assignment statement always evaluates to `true`.
 
-##### Condition
+#### Condition
 
 A condition statement simply consists of an expression that must evaluate to `true` or `false`.
 
 The expression can use any element of the SAPL expression language, especially of attribute finder steps that are not allowed in the target expression. Conditions in the policy body are used to further limit the applicability of a policy.
 
-#### Obligation
+### Obligation
 
 An **optional** obligation expression contains a task which the PEP must fulfill before granting or denying access. It consists of the keyword `obligation` followed by an expression.
 
@@ -89,7 +89,7 @@ Obligations are only returned in the authorization decision if the decision is `
 
 In any policy an arbitrary number of obligation expressions, all introduced with the **obligation** keyword may be present. All obligation expressions must be written down before any **advice**.
 
-#### Advice
+### Advice
 
 An **optional** advice expression is treated similarly to an obligation expression. Unlike obligations, fulfilling the described tasks in the advice is not a requirement for granting or denying access. The advice expression consists of the keyword `advice` followed by any expression.
 
@@ -97,7 +97,7 @@ If the final decision is `PERMIT` or `DENY`, advice from all policies evaluating
 
 In any policy an arbitrary number of advice expressions, all introduced with the **advice** keyword may be present. All advice expressions must be written down after any **obligation**.
 
-#### Transformation
+### Transformation
 
 An **optional** transformation statement starts with the keyword `transform` and followed by an expression. If a transformation statement is supplied and the policy evaluates to `permit`, the result of evaluating the expression will be returned as the `resource` in the authorization decision object.
 

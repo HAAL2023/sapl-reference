@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 9
 ---
 
-### Code Coverage Reports via the SAPL Maven Plugin
+## Code Coverage Reports via the SAPL Maven Plugin
 
 For measuring the policy code coverage of SAPL policies, developers can use the SAPL Maven Plugin to analyze the coverage and generate reports in various formats.
 
@@ -17,14 +17,14 @@ Currently, three coverage criteria are supported:
 - **Policy Hit Coverage**: Measures the percentage of Policies that were at least once applicable to an `AuthorizationSubscription` in the tests.
 - **Condition Hit Coverage**: Measures the percentage of conditions evaluated to true or false during the tests. The number of conditions times two is compared with the number of positively and negatively evaluated conditions.
 
-#### Plugin Goals
+### Plugin Goals
 
 | **Goal** | **Description** |
 |:-----|:------------|
 | sapl:enable-coverage-collection | No description |
 | sapl:report-coverage-information | Collect coverage information and generate reports. Print path to HTML report in the Maven log. |
 
-#### Usage
+### Usage
 
 The SAPL Maven Plugin can be added to the Maven project by adding the following configuration to the `pom.xml`
 
@@ -54,7 +54,7 @@ The SAPL Maven Plugin can be invoked by calling the `verify` phase of the Maven 
 mvn verify
 ```
 
-#### Configuration
+### Configuration
 
 The plugin can be configured via the following parameters:
 

@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 3
 ---
 
-### Imports
+## Imports
 
 SAPL provides access to functions or attribute finders stored in libraries. The names of those libraries usually consist of different parts separated by periods (e.g., `sapl.pip.http` - a library containing functions to obtain attributes through HTTP requests). In policy documents, the functions and finders can be accessed by their fully qualified name, i.e., the name of the library followed by a period (`.`) and the function or finder name, e.g., `sapl.pip.http.get`.
 
