@@ -5,6 +5,7 @@ title: Authorization Subscription Evaluation
 has_children: true
 parent: SAPL Reference
 nav_order: 6
+has_toc: false
 ---
 
 ## Authorization Subscription Evaluation

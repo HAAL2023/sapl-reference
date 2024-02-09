@@ -5,6 +5,7 @@ title: Functions
 has_children: true
 parent: SAPL Reference
 nav_order: 7
+has_toc: false
 ---
 
 ## Functions

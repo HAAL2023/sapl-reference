@@ -5,6 +5,7 @@ title: The SAPL Policy Language
 has_children: true
 parent: SAPL Reference
 nav_order: 5
+has_toc: false
 ---
 
 ## The SAPL Policy Language

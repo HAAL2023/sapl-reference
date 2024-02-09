@@ -5,6 +5,7 @@ title: PDP APIs
 has_children: true
 parent: SAPL Reference
 nav_order: 4
+has_toc: false
 ---
 
 ## PDP APIs

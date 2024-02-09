@@ -4,6 +4,7 @@ title: Reference Architecture
 has_children: true
 parent: SAPL Reference
 nav_order: 2
+has_toc: false
 ---
 
 ## Reference Architecture

@@ -6,6 +6,7 @@ parent: SAPL Reference
 nav_order: 1
 #grand_parent: UI Components
 #permalink: /reference/Introduction/
+has_toc: false
 ---
 
 # SAPL - Streaming Attribute Policy Language
