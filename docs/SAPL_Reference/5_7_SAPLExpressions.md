@@ -236,8 +236,9 @@ The basic access syntax is quite similar to accessing an object’s attributes i
 
 Multiple selection steps can be **chained**. The steps are evaluated from left to right. Each step is applied to the result returned from the previous step.
 
-| **Example** <br /><br />The expression object.array\[2\] first selects the attribute with key array from the object object (first step). Then it returns the third element (index 2) of that array (second step). |
-|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+{: .info }
+**Example** <br /><br />The expression object.array\[2\] first selects the attribute with key array from the object object (first step). Then it returns the third element (index 2) of that array (second step). |
+
 
 ##### Extended Possibilities
 
