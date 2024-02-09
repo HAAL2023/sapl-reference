@@ -5,12 +5,14 @@ description: "SAPL is a powerful policy language and engine to implement Attribu
 nav_order: 1
 has_children: true
 permalink: /
+has_toc: false
 ---
 
-# SAPL Reference
+# SAPL Reference Version 3.0.0-SNAPSHOT
 <!--
 <button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 -->
+
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
 
