@@ -27,18 +27,18 @@ Starting with constructTestCaseWithMocks() or constructTestCase() called on the 
 **Mocking of functions**:
 
 - the `givenFunction` methods can be used to mock a function returning a `Val` specified in the method parameters for every call. 
-  - a single value can be specified
+  -- a single value can be specified
 
     ```java
     .givenFunction("time.dayOfWeek", Val.of("SATURDAY"))
     ```
-  - a single value only returned when the parameters of the function call match some expectations
+  -- a single value only returned when the parameters of the function call match some expectations
 
     ```java
     .givenFunction("corp.subjectConverter",
         whenFunctionParams(is(Val.of("USER")), is(Val.of("nikolai"))), Val.of("ROLE_ADMIN"))
     ```
-  - or a Lambda-Expression evaluating the parameters of the function call
+  -- or a Lambda-Expression evaluating the parameters of the function call
 
     ```java
     .givenFunction("company.complexFunction", (FunctionCall call) -> {
@@ -50,19 +50,19 @@ Starting with constructTestCaseWithMocks() or constructTestCase() called on the 
         return param0 % param1 == 0 ? Val.of(true) : Val.of(false);
     })
     ```
-  - and verify the number of calls to this mock
+  -- and verify the number of calls to this mock
 
     ```java
     .givenFunction("time.dayOfWeek", Val.of("SATURDAY"), times(1))
     ```
 - `givenFunctionOnce` can specify a `Val` or multiple `Val`\-Objects which are emitted once (in a sequence) when this mocked function is called 
-  - a single value
+  -- a single value
 
     ```java
     .givenFunctionOnce("time.secondOf", Val.of(4))
     .givenFunctionOnce("time.secondOf", Val.of(5))
     ```
-  - or a sequence of values
+  -- or a sequence of values
 
     ```java
     .givenFunctionOnce("time.secondOf", Val.of(3), Val.of(4), Val.of(5))
@@ -71,12 +71,12 @@ Starting with constructTestCaseWithMocks() or constructTestCase() called on the 
 **Mocking of attributes**:
 
 - `givenAttribute` methods can mock attributes 
-  - to return one or more `Val`
+  -- to return one or more `Val`
 
     ```java
     .givenAttribute("time.now", timestamp0, timestamp1, timestamp2)
     ```
-  - to return a sequence of `Val` in an interval of `Duration`. Using `withVirtualTime` activates the virtual time feature of Project Reactor
+  -- to return a sequence of `Val` in an interval of `Duration`. Using `withVirtualTime` activates the virtual time feature of Project Reactor
 
     ```java
     .withVirtualTime()

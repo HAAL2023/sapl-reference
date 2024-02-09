@@ -55,8 +55,8 @@ It works as follows:
 
 1. If any target evaluation results in an error (`INDETERMINATE`) or if more than one policy documents have a matching target, the decision is `INDETERMINATE`.
 2. Otherwise (i.e., only one policy document with matching target, no errors):
-   2.1. If there is no matching policy document, the decision is `NOT_APPLICABLE`.
-   2.2. Otherwise (i.e., there is exactly one matching policy document), the decision is the result of evaluating this policy document.
+   1. If there is no matching policy document, the decision is `NOT_APPLICABLE`.
+   2. Otherwise (i.e., there is exactly one matching policy document), the decision is the result of evaluating this policy document.
 
 {: .note }
 > Transformation uncertainty cannot occur using the `only-one-applicable` combining algorithm.
@@ -69,10 +69,10 @@ It works as follows:
 
 1. If any policy document evaluates to `DENY`, the decision is `DENY`.
 2. Otherwise (no policy document evaluates to `DENY`):
-   2.1. If there is any `INDETERMINATE` or there is a *transformation uncertainty* (multiple policies evaluate to `PERMIT`, and at least one of them has a transformation statement), the decision is `INDETERMINATE`.
-   2.2. Otherwise (no policy document evaluates to `DENY`, no policy document evaluates to `INDETERMINATE`, no transform uncertainty):
-      2.2.1. If there is at least one `PERMIT`, the decision is `PERMIT`.
-      2.2.2. Otherwise, the decision is `NOT_APPLICABLE`.
+   1. If there is any `INDETERMINATE` or there is a *transformation uncertainty* (multiple policies evaluate to `PERMIT`, and at least one of them has a transformation statement), the decision is `INDETERMINATE`.
+   2. Otherwise (no policy document evaluates to `DENY`, no policy document evaluates to `INDETERMINATE`, no transform uncertainty):
+      1. If there is at least one `PERMIT`, the decision is `PERMIT`.
+      2. Otherwise, the decision is `NOT_APPLICABLE`.
 
 #### `permit-overrides`
 
@@ -82,10 +82,10 @@ It works as follows:
 
 1. If any policy document evaluates to `PERMIT` and there is no *transformation uncertainty* (multiple policies evaluate to `PERMIT` and at least one of them has a transformation statement), the decision is `PERMIT`.
 2. Otherwise (no policy document evaluates to `PERMIT`):
-   2.1. If there is any `INDETERMINATE` or there is a *transformation uncertainty* (multiple policies evaluate to `PERMIT`, and at least one of them has a transformation statement), the decision is `INDETERMINATE`.
-   2.2. Otherwise (no policy document evaluates to `PERMIT`, no policy document evaluates to `INDETERMINATE`, no transform uncertainty):
-      2.2.1. If there is any `DENY`, the decision is `DENY`.
-      2.2.2. Otherwise, the decision is `NOT_APPLICABLE`.
+   1. If there is any `INDETERMINATE` or there is a *transformation uncertainty* (multiple policies evaluate to `PERMIT`, and at least one of them has a transformation statement), the decision is `INDETERMINATE`.
+   2. Otherwise (no policy document evaluates to `PERMIT`, no policy document evaluates to `INDETERMINATE`, no transform uncertainty):
+      1. If there is any `DENY`, the decision is `DENY`.
+      2. Otherwise, the decision is `NOT_APPLICABLE`.
 
 #### `first-applicable`
 
@@ -96,7 +96,7 @@ Since there is no order in the policy documents known to the PDP, the PDP cannot
 It works as follows:
 
 1. Each policy is evaluated in the order specified in the policy set.
-   1.1. If it evaluates to `INDETERMINATE`, the decision is `INDETERMINATE`.
-   1.2. If it evaluates to `PERMIT` or `DENY`, the decision is `PERMIT` or `DENY`
-   1.3. If it evaluates to `NOT_APPLICABLE`, the next policy is evaluated.
+   1. If it evaluates to `INDETERMINATE`, the decision is `INDETERMINATE`.
+   2. If it evaluates to `PERMIT` or `DENY`, the decision is `PERMIT` or `DENY`
+   3. If it evaluates to `NOT_APPLICABLE`, the next policy is evaluated.
 2. If no policy with a decision different from `NOT_APPLICABLE` has been found, the decision of the policy set is `NOT_APPLICABLE`.
