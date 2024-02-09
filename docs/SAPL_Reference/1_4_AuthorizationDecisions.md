@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 4
 ---
 
-### Authorization Decisions
+## Authorization Decisions
 
 The SAPL authorization decision to the authorization subscription is a JSON object as well. It contains the attribute `decision` as well as the optional attributes `resource`, `obligation`, and `advice`. For the introductory sample authorization subscription with the preceding policy, a SAPL authorization decision would look as follows:
 

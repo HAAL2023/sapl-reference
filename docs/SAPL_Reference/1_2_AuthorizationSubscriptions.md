@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 2
 ---
 
-### Authorization Subscriptions
+## Authorization Subscriptions
 
 A SAPL authorization subscription is a JSON object, i.e., a set of name/value pairs or *attributes*. It contains attributes with the names `subject`, `action`, `resource`, and `environment`. The values of these attributes may be any arbitrary JSON value, e.g.:
 

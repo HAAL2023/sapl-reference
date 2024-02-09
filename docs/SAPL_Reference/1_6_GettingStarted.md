@@ -7,13 +7,13 @@ grand_parent: SAPL Reference
 nav_order: 6
 ---
 
-### Getting Started
+## Getting Started
 
 To learn the SAPL policy language and check out some example policies, the [SAPL-Playground](https://playground.sapl.io/) offers a tool for safe experimentation.
 
 In addition, SAPL provides an embedded PDP, including an embedded PRP with a file system policy store that seamlessly integrates into Java applications. Besides this guide, the quickest way to start is to build upon the demo projects hosted on [GitHub](https://github.com/heutelbeck/sapl-demos). Some good demos to start with are the simple no-framework [Embedded PDP Demo](https://github.com/heutelbeck/sapl-demos/tree/master/sapl-demo-embedded) or the full-stack [Spring MVC Project](https://github.com/heutelbeck/sapl-demos/tree/master/sapl-demo-mvc-app) or the [Fully reactive Webflux Application](https://github.com/heutelbeck/sapl-demos/tree/master/sapl-demo-webflux).
 
-#### Maven Dependencies
+### Maven Dependencies
 
 - SAPL requires Java 11 or newer and is compatible with Java 17.
 
@@ -47,7 +47,7 @@ In addition, SAPL provides an embedded PDP, including an embedded PRP with a fil
   <dependencyManagement> <dependencies> <dependency> <groupId>io.sapl</groupId> <artifactId>sapl-bom</artifactId> <version>3.0.0-SNAPSHOT</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement>
   ```
 
-#### Coding
+### Coding
 
 1. In the application, create a new `EmbeddedPolicyDecisionPoint`. The argument `"~/sapl"` specifies the directory that contains the configuration file `pdp.json` and all policies (i.e., files ending with `.sapl`).
 

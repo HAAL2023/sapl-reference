@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 3
 ---
 
-### Structure of a SAPL Policy
+## Structure of a SAPL Policy
 
 A SAPL policy document generally consists of:
 

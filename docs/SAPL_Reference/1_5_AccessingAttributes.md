@@ -7,7 +7,7 @@ grand_parent: SAPL Reference
 nav_order: 5
 ---
 
-### Accessing Attributes
+## Accessing Attributes
 
 In many use cases, the authorization subscription contains all the required information for making a decision. However, the PEP is usually not aware of the specifics of the access policies and may not have access to all information required for making the decision. In this case, the PDP can access external attributes. The following example shows how SAPL expresses access to attributes.
 
