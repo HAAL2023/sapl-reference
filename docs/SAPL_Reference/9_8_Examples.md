@@ -2,7 +2,7 @@
 layout: default
 title: Examples
 permalink: /reference/Examples/
-parent: TestTesting SAPL policiesing
+parent: Testing SAPL policies
 grand_parent: SAPL Reference
 nav_order: 8
 ---
