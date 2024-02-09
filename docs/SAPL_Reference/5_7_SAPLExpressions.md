@@ -7,13 +7,13 @@ grand_parent: SAPL Reference
 nav_order: 8
 ---
 
-### SAPL Expressions
+## SAPL Expressions
 
 To ensure flexibility, various parts of a policy can be **expressions** that are evaluated at runtime. E.g., a policy’s target must be an expression evaluating to `true` or `false`. SAPL contains a uniform expression language that offers various useful features while still being easy to read and write.
 
 Since JSON is the base data model, each expression evaluates to a JSON data type. These data types and the expression syntax are described in this section.
 
-#### JSON Data Types
+### JSON Data Types
 
 SAPL is based on the **JavaScript Object Notation** or **JSON**, an [ECMA Standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf) for the representation of structured data. Any value occurring within the SAPL language is a JSON data type, and any expression within a policy evaluates to a JSON data type. The types and their JSON notations are:
 
@@ -30,7 +30,7 @@ SAPL is based on the **JavaScript Object Notation** or **JSON**, an [ECMA Standa
 
     \[ "A value", 123, {"attribute" : "value"} \]
 
-#### Expression Types
+### Expression Types
 
 SAPL knows **basic expressions** and **operator expressions** (created from other expressions using operators).
 
@@ -46,7 +46,7 @@ Each of these basic expressions can contain one or more **selection steps** (e.g
 
 **Operator expressions** can be constructed using prefix or infix **operators** (e.g., `1 + subject.age` or `! subject.isBlocked`). SAPL supports infix and prefix operators. They may be applied in connection with any expression. An operator expression within parentheses (e.g., `(1 + subject.age)`) is a basic expression again and thus may contain selection steps, filter, or subtemplate statements.
 
-##### Value Expressions
+### Value Expressions
 
 A basic value expression is the simplest type. The value is denoted in the corresponding JSON format.
 
@@ -70,13 +70,13 @@ For arrays, the items can be any expression, e.g.
 ]
 ```
 
-##### Identifier Expressions
+### Identifier Expressions
 
 A basic identifier expression consists of the name of a variable or the name of an authorization subscription attribute (i.e., `subject`, `resource`, `action`, or `environment`).
 
 It evaluates to the variable or the attribute’s value.
 
-##### Function Expressions
+### Function Expressions
 
 A basic function expression consists of a function name and any number of arguments between parentheses which are separated by commas. The arguments must be expressions, e.g.
 
@@ -92,7 +92,7 @@ If there are no arguments passed to the function, empty parentheses have to be d
 
 When evaluating a function expression, the expressions representing the function call arguments are evaluated first. Afterward, the results are passed to the function as arguments. The expression evaluates to the function’s return value.
 
-##### Relative Expressions
+### Relative Expressions
 
 The basic relative expression is the `@` symbol.
 
@@ -104,11 +104,11 @@ The contexts in which `@` can be used are:
 - Subtemplate (`@` evaluates to the array item which is currently going to be replaced by the subtemplate)
 - Arguments of a filter function if `each` is used (`@` evaluates to the array item to which the filter function is going to be applied)
 
-#### Operators
+## Operators
 
 SAPL provides a collection of arithmetic, comparison, logical, string and filtering operators, which can be used to build expressions from other expressions.
 
-##### Arithmetic Operators
+### Arithmetic Operators
 
 Assuming `exp1` and `exp2` are expressions evaluating to numbers, the following operators can be applied. All of them evaluate to number.
 
@@ -130,7 +130,7 @@ As `*` has a higher precedence than `+`, `4 + 3 * 2` would be evaluated as `4 + 
 
 Except for the negation, multiple operators with the same precedence (e.g., `5 - 2 + 1`) are **left-associative**, i.e., `5 - 2 + 1` is evaluated like `(5 - 2) + 1`. The negation is non-associative, i.e., `--1` needs to be replaced by `-(-1)`.
 
-##### Comparison Operators
+### Comparison Operators
 
 1. Number comparison
 
@@ -166,7 +166,7 @@ Except for the negation, multiple operators with the same precedence (e.g., `5 -
 
    `<`, `>`, `<=`, `>=`, `==`,`=~` and `in` are **non-associative**, i.e., an expression may not contain multiple comparison operators (like `3 < var < 5`). However, they can be combined with logical operators which have a different precedence (thus, the faulty example could be replaced by `3 < var && var < 5`).
 
-##### Logical Operators
+### Logical Operators
 
 Assuming `exp1` and `exp2` are expressions evaluating to `true` or `false`, the following operators can be applied. The new expression evaluates to `true` or `false`:
 
@@ -180,7 +180,7 @@ The operators are already listed in descending order of their **precedence**, i.
 
 `&&` and `||` are left-associative, i.e., in case an expression contains multiple operators the leftmost operator is evaluated first. `!` is non-associative, i.e., `!!true` must be replaced by `!(!true))`.
 
-##### String Concatenation
+### String Concatenation
 
 The operator `+` concatenates two strings, e.g., `"Hello" + " World!"` evaluates to `"Hello World!"`.
 
@@ -190,7 +190,7 @@ String concatenation is applied if the left operand is an expression evaluating 
 
 SAPL provides an easy way of accessing attributes of an object (or items of an array). The **basic access** mechanism has a similar syntax to programming languages like JavaScript or Java (e.g., `object.attribute`, `user.address.street` or `array[10]`). Beyond that, SAPL offers **extended possibilities** for expressing more sophisticated queries against JSON structures (e.g., `persons[?(@.age >= 50)]`).
 
-##### Overview
+### Overview
 
 The following table provides an overview of the different types of selection steps.
 
@@ -227,7 +227,7 @@ Structure of `object`
 
 *Table 1. Selection Steps Overview*
 
-##### Basic Access
+### Basic Access
 
 The basic access syntax is quite similar to accessing an object’s attributes in JavaScript or Java:
 
@@ -240,11 +240,11 @@ Multiple selection steps can be **chained**. The steps are evaluated from left t
 **Example** <br /><br />The expression object.array\[2\] first selects the attribute with key array from the object object (first step). Then it returns the third element (index 2) of that array (second step). |
 
 
-##### Extended Possibilities
+### Extended Possibilities
 
 SAPL supports querying for specific parts of a JSON structure. Except for an **expression step**, all of these steps return an array since the number of elements found can vary. Even if only a single result is retrieved, the expression returns an array containing one item.
 
-###### Expression Step `[(Expression)]`
+#### Expression Step `[(Expression)]`
 
 An expression step returns the value of an attribute with a key or an array item with an index specified by an expression. `Expression` must evaluate to a string or a number. If `Expression` evaluates to a string, the selection can only be applied to an object. If `Expression` evaluates to a number, the selection can only be applied to an array.
 
@@ -252,7 +252,7 @@ An expression step returns the value of an attribute with a key or an array item
 > The expression step can be used to refer to custom variables (`object.array[(anIndex+2)]`) or apply custom functions (`object.array[(max_value(object.array))]`.
 
 
-###### Wildcard Step `.*` or `[*]`
+#### Wildcard Step `.*` or `[*]`
 
 A wildcard step can be applied to an object or an array. When applied to an object, it returns an array containing all attribute values. As attributes of an object have no order, the sorting of the result is not defined. When applied to an array, the step just leaves the array untouched.
 
@@ -260,7 +260,7 @@ A wildcard step can be applied to an object or an array. When applied to an obje
 > Applied to an object `{"key1":"value1", "key2":"value2"}`, the selection step `.*` or `[*]` returns the following array: `["value1", "value2"]` (possibly with a different sorting of the items). Applied to an array `[1, 2, 3]`, the selection step `.` **or** `[]` returns the original array `[1, 2, 3]`.
 
 
-###### Recursive Descent Step `..key`, `..["key"]`, `..[1]`, `..*` or `..[*]`
+#### Recursive Descent Step `..key`, `..["key"]`, `..[1]`, `..*` or `..[*]`
 
 Looks for the specified key or array index in the current object or array and, recursively, in its children (i.e., the values of its attributes or its items). The recursive descent step can be applied to both an object and an array. It returns an array containing all attribute values or array items found. If the specified key is an asterisk (`..` **or** `[]`, wildcard), all attribute values and array items in the whole structure are returned.
 
@@ -281,7 +281,7 @@ As attributes of an object are not sorted, the order of items in the result arra
 > The wildcard selection step `object..` **or** `object..[]` returns `["value1", {"key":"value2"}, "value2"]` (recursively each attribute value and array item in the whole structure `object`, the sorting may be different).
 
 
-###### Condition `[?(Condition)]`
+#### Condition `[?(Condition)]`
 
 Condition steps return an array containing all attribute values or array items for which `Condition` evaluates to `true`. It can be applied to both an object (then it checks each attribute value) and an array (then it checks each item). `Condition` must be an expression in which [relative expressions](#basic-relative) starting with `@` can be used. `@` evaluates to the current attribute value or array item for which the condition is evaluated and can be followed by further selection steps.
 
@@ -291,7 +291,7 @@ As attributes have no order, the sorting of the result array of a condition step
 > Applied to the array `[1, 2, 3, 4, 5]`, the selection step `[?(@ > 2)]` returns the array `[3, 4, 5]` (containing all values that are greater than 2).
 
 
-###### Array Slicing `[Start:Stop:Step]`
+#### Array Slicing `[Start:Stop:Step]`
 
 The slice contains the items with indices between `Start` and `Stop`, with `Start` being inclusive and `Stop` being exclusive. `Step` describes the distance between the elements to be included in the slice, i.e., with a `Step` of 2, only each second element would be included (with `Start` as the first element’s index). All parts except the first colon are optional. `Step` defaults to 1.
 
@@ -305,7 +305,7 @@ In case `Step` is positive, `Start` defaults to 0 and `Stop` defaults to the len
 > If Start and Stop are to be left empty, the two colons must be separated by a whitespace to avoid confusion with the sub-template operator. So write `[: :-2]` instead of `[::-2]`.
 
 
-###### Index Union `[index1, index2, …​]`
+#### Index Union `[index1, index2, …​]`
 
 By using the bracket notation, a set of multiple array indices (numbers) can be denoted separated by commas. This returns an array containing the items of the original array if the item’s index is contained in the specified indices. Since a **set** of indices is specified, the indices' order is ignored, and duplicate elements are removed. The result array contains the specified elements in their original order. Indices that do not exist in the original array are ignored.
 
@@ -313,11 +313,11 @@ By using the bracket notation, a set of multiple array indices (numbers) can be 
 > Both `[3, 2, 2]` and `[2, 3]` return the same result.
 
 
-###### Attribute Union `["attribute1", "attribute2", …​]`
+#### Attribute Union `["attribute1", "attribute2", …​]`
 
 By using the bracket notation, a set of multiple attribute keys (strings) can be denoted separated by commas. This returns an array containing the values of the denoted attributes. Since a **set** of attribute keys is specified, the keys' order is ignored, and duplicate elements are removed. As attributes have no order, the sorting of the resulting array is not specified. Attributes that do not exist are ignored.
 
-###### Attribute Selection on Array
+#### Attribute Selection on Array
 
 Although arrays do not have attributes (they have items), a key step can be applied to an array (e.g., `array.value`). This will loop through each item of the array and look for the specified attribute in this item. An array containing all values of the attributes found is returned. In other words, the selection step is not applied to the result of the previous step (the array) but to each item of the result, and the (sub-)results are concatenated. In case an array item is no object or does not contain the specified attribute, it is skipped.
 
@@ -334,7 +334,7 @@ Although arrays do not have attributes (they have items), a key step can be appl
 > `array.key` returns the following array: `["value1", "value2"]` (the value of the `key` attribute of each item of `array`).
 
 
-###### Attribute Finder `.<finder.name>`
+#### Attribute Finder `.<finder.name>`
 
 In SAPL, it is possible to receive attributes that are not contained in the authorization subscription. Those attributes can be provided by external PIPs and obtained through attribute finders.
 
@@ -362,13 +362,13 @@ In some scenarios, it may not be the right thing to subscribe to attributes, but
 
 Attribute finders are described in greater detail [below](#attribute-finders).
 
-#### Filtering
+## Filtering
 
 SAPL provides syntax elements filtering values by applying **filters**, and that can potentially modify the value.
 
 Filters can only be applied to basic expressions (remember that an expression in parentheses is a basic expression). Filtering is denoted by the `|-` operator after the expression. Which **filter function** is applied in what way can be defined by a **simple filtering component** or by an **extended filtering component**, which consists of several filter statements.
 
-##### Filter Functions
+### Filter Functions
 
 SAPL provides three **built-in filter functions**:
 
@@ -410,7 +410,7 @@ If instead filter.replace is applied to value with the Expression null, the resu
 If the function filter.blacken is applied to value without specifying any arguments, the result would be { "value" : "XXXXXX", "id" : 5 }.
 ```
 
-##### Simple Filtering
+### Simple Filtering
 
 A simple filter component applies a **filter function** to the preceding value. The syntax is:
 
@@ -450,7 +450,7 @@ The function blacken(1) without any additional parameters takes a string and rep
 Without the keyword each, the function blacken would be applied to the array itself, resulting in an error, as stated above, blacken can only be applied to a String.
 ```
 
-##### Extended Filtering
+### Extended Filtering
 
 Extended filtering can be used to state more precisely how a value should be altered.
 
@@ -488,7 +488,7 @@ The filter statements are applied successively from top to bottom.
 > Some filter functions can be applied to both arrays and other types (e.g., `remove`). Yet, there are selection steps resulting in a "helper array" that cannot be modified. If, for instance, `.*` is applied to the object `{"key1" : "value1", "key2" : "value2"}`, the result would be `["value1", "value2"]`. It is not possible to apply a filter function directly to this array because changing the array itself would not have any effect. The array has been constructed merely to hold multiple values for further processing. In this case, the policy would **have to** use the keyword `each` and apply the function to each item. The attempt to alter a helper array will result in an error.
 
 
-##### Custom Filter Functions
+### Custom Filter Functions
 
 Any function available in SAPL can be used in a filter statement. Hence it is easy to add custom filter functions.
 
@@ -498,7 +498,7 @@ When used in a filter statement, the value to filter is passed to the function a
 > Assuming a filter function `roundto` should round a value to the closest multiple of a given number, e.g., `207 |- roundto(100)` should return `200`. In its definition, the function needs two formal parameters. The first parameter is reserved for the original value and the second one for the number to round to.
 
 
-#### Subtemplate
+## Subtemplate
 
 It is possible to define a subtemplate for an array to replace each item of the array with this subtemplate. A subtemplate component is an optional part of a basic expression.
 
