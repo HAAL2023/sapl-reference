@@ -1,6 +1,25 @@
 // custom SCSS (or CSS) goes here
-.saplcenter {
+  .sapldropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .sapldropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  .sapldropdown:hover .sapldropdown-content {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+  }
+  .sapldropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .sapldropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
   }
