@@ -10,14 +10,7 @@
 {%- endcomment -%}
 
 <nav aria-label="Main" id="site-nav" class="site-nav">
-  <div class="sapldropdown">
-    <button>HubSpot Resources</button>
-    <div class="sapldropdown-content">
-      <a href="https://sapl.io/">Blog</a>
-      <a href="https://academy.hubspot.com/">Academy</a>
-      <a href="https://www.youtube.com/user/hubspot">YouTube</a>
-    </div>
-  </div>
+  
   {% assign pages_top_size = site.html_pages
         | where_exp:"item", "item.title != nil"
         | where_exp:"item", "item.parent == nil"
