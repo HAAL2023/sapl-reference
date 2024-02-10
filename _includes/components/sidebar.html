@@ -11,42 +11,13 @@
 
 <div class="side-bar">
   <div class="site-header" role="banner">
-    <!--
+    
     <a href="{{ site.content.redirectBackToLink }}" class="site-title lh-tight">{% include title.html %}</a>
+    <!--
     <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
       <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
     </button>
     -->
-    <div class="sapldropdown">
-      <button onclick="myFunction()" class="sapldropbtn">Dropdown</button>
-      <div id="myDropdown" class="sapldropdown-content">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-    
-    <script>
-    /* When the user clicks on the button, 
-    toggle between hiding and showing the dropdown content */
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
-    }
-    
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.sapldropbtn')) {
-        var dropdowns = document.getElementsByClassName("sapldropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
-    }
-    </script>
   </div>
   
   {% include_cached components/site_nav.html %}
