@@ -16,6 +16,8 @@
       <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
     </button>
   </div>
+  
+  {% include_cached components/site_nav.html %}
   <div class="sapldropdown">
     <button>HubSpot Resources</button>
     <div class="sapldropdown-content">
@@ -24,8 +26,6 @@
       <a href="https://www.youtube.com/user/hubspot">YouTube</a>
     </div>
   </div>
-  {% include_cached components/site_nav.html %}
-
   {% capture nav_footer_custom %}
     {%- include nav_footer_custom.html -%}
   {% endcapture %}
