@@ -12,10 +12,22 @@
 <div class="side-bar">
   <div class="site-header" role="banner">
     <a href="{{ site.content.redirectBackToLink }}" class="site-title fs-3">{% include title.html %} <img src="/sapl-reference/assets/sapl_reference_images/arrow-left-wh20.svg"></a>
-    <select name="version" id="version">Version</select>>
+    <select name="saplversion" id="saplversion" style="width: 150px;">
       <option value="https://haal2023.github.io/sapl-reference/" selected>3.0.0-SNAPSHOT</option>
       <option value="https://haal2023.github.io/docs/2.0.1/sapl-reference.html">2.0.1</option>
     </select>
+    <script>
+      $(function(){
+        // bind change event to select
+        $('#saplversion').on('change', function () {
+            var url = $(this).val(); // get selected value
+            if (url) { // require a URL
+                window.location = url; // redirect
+            }
+            return false;
+        });
+      });
+  </script>
     <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
       <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
     </button>
