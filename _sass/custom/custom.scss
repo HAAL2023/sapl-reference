@@ -1,26 +1,6 @@
 // custom SCSS (or CSS) goes here
-  .sapldropdown {
-    display: block;
-    color: #ffffff;
-    position: relative;
-  }
-  .sapldropdown-content {
-    display: none;
-    position: absolute;
-    width: 100%;
-    overflow: auto;
-    box-shadow: 0px 10px 10px 0px #fff;
-  }
-  .sapldropdown:hover .sapldropdown-content {
-    display: block;
-  }
-  .sapldropdown-content a {
-    display: block;
-    color: #ffffff;
-    padding: 5px;
-    text-decoration: none;
-  }
-  .sapldropdown-content a:hover {
-    color: #FFFFFF;
-    background-color: grey;
-  }
+.saplscrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
+}
