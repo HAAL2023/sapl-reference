@@ -1,6 +1,6 @@
 // custom SCSS (or CSS) goes here
-.saplscrollable-menu {
-    height: auto;
-    max-height: 200px;
+ul#css3menu1 ul.scroll{
+    max-height: 135px;
+    overflow-y: auto;
     overflow-x: hidden;
 }
