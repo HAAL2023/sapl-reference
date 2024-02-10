@@ -5,6 +5,7 @@
   }
   .sapldropdown-content {
     display: none;
+    color: #ffffff;
     position: absolute;
     width: 100%;
     overflow: auto;
@@ -21,5 +22,5 @@
   }
   .sapldropdown-content a:hover {
     color: #FFFFFF;
-    background-color: #00A4BD;
+    background-color: grey;
   }
