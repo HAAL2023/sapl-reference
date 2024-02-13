@@ -399,8 +399,6 @@ Replaces each char of an attribute or item (which must be a string) by `replacem
  We take the following object:
 
  Object Structure
-
- 
  {
     "value" : "aValue",
     "id" : 5
