@@ -269,14 +269,14 @@ As attributes of an object are not sorted, the order of items in the result arra
 {: .note }
 > Applied to an `object`
 >
->> ```
->> {
->>   "key" : "value1",
->>   "anotherkey" : {
->>   "key" : "value2"
->>   }
->> }
->> ```
+> ```
+> {
+>   "key" : "value1",
+>   "anotherkey" : {
+>   "key" : "value2"
+>   }
+> }
+> ```
 > 
 > The selection step `object..key` returns the following array: `["value1", "value2"]` (any attribute value with key `key`, the items may be in a different order).
 > 
