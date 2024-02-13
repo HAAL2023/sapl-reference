@@ -400,10 +400,12 @@ We take the following object:
 
 Object Structure
 
+```
 {
     "value" : "aValue",
     "id" : 5
 }
+```
 
 If value is removed, the resulting object is { "id" : 5 }.
 
