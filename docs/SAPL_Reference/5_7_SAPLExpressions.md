@@ -487,6 +487,18 @@ The filter statements are applied successively from top to bottom.
 {: .warning }
 > Some filter functions can be applied to both arrays and other types (e.g., `remove`). Yet, there are selection steps resulting in a "helper array" that cannot be modified. If, for instance, `.*` is applied to the object `{"key1" : "value1", "key2" : "value2"}`, the result would be `["value1", "value2"]`. It is not possible to apply a filter function directly to this array because changing the array itself would not have any effect. The array has been constructed merely to hold multiple values for further processing. In this case, the policy would **have to** use the keyword `each` and apply the function to each item. The attempt to alter a helper array will result in an error.
 
+<details open markdown="block">
+  <summary>
+    Custom Filter Functions
+  </summary>
+  {: .text-delta }
+Any function available in SAPL can be used in a filter statement. Hence it is easy to add custom filter functions.
+
+When used in a filter statement, the value to filter is passed to the function as its first argument. Consequently, the arguments specified in the function call are passed as second, third, etc., arguments.
+
+{: .note }
+> Assuming a filter function `roundto` should round a value to the closest multiple of a given number, e.g., `207 |- roundto(100)` should return `200`. In its definition, the function needs two formal parameters. The first parameter is reserved for the original value and the second one for the number to round to.
+</details>
 
 ### Custom Filter Functions
 
