@@ -489,7 +489,7 @@ The filter statements are applied successively from top to bottom.
 
 <details open markdown="block">
   <summary>
-    Custom Filter Functions
+    ### Custom Filter Functions
   </summary>
   {: .text-delta }
 Any function available in SAPL can be used in a filter statement. Hence it is easy to add custom filter functions.
