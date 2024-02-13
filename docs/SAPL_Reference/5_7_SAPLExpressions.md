@@ -394,25 +394,25 @@ Replaces each char of an attribute or item (which must be a string) by `replacem
 > `filter.replace` and `filter.blacken` are part of the library `filter`. Importing this library through `import filter` makes the functions available under their simple names.
 
 
-> ```
-> Example
-> We take the following object:
->
-> Object Structure
->
->
-> {
->    "value" : "aValue",
->    "id" : 5
-> }
->
->
-> If value is removed, the resulting object is { "id" : 5 }.
->
-> If instead filter.replace is applied to value with the Expression null, the resulting object is { "value" : null, "id" : 5 }.
->
-> If the function filter.blacken is applied to value without specifying any arguments, the result would be { "value" : "XXXXXX", "id" : 5 }.
-> ```
+```
+ Example
+ We take the following object:
+
+ Object Structure
+
+ 
+ {
+    "value" : "aValue",
+    "id" : 5
+ }
+
+
+ If value is removed, the resulting object is { "id" : 5 }.
+
+ If instead filter.replace is applied to value with the Expression null, the resulting object is { "value" : null, "id" : 5 }.
+
+ If the function filter.blacken is applied to value without specifying any arguments, the result would be { "value" : "XXXXXX", "id" : 5 }.
+```
 
 ### Simple Filtering
 
