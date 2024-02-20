@@ -532,7 +532,7 @@ Array :: Expression
 
 This `Expression` represents the replacement template. In this expression, basic relative expressions (starting with `@`) can be used to access the attributes of the current array item. `@` references the array item, which is currently being replaced. `Array` must evaluate to an array. For each item of `Array`, `Expression` is evaluated, and the item is replaced by the result.
 
-```c++
+```python
 Example
 Given the variable array contains the following array:
 
@@ -554,4 +554,25 @@ would evaluate to:
     {"aKey" : "aValue", "identifier" : 1 },
     {"aKey" : "aValue", "identifier" : 2 }
 ]
+```
+
+```perl
+array :: {
+    "aKey" : "aValue"
+    "identifier" : @.id
+}
+```
+
+```css
+array :: {
+    "aKey" : "aValue"
+    "identifier" : @.id
+}
+```
+
+```lua
+array :: {
+    "aKey" : "aValue"
+    "identifier" : @.id
+}
 ```
